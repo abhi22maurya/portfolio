@@ -48,7 +48,7 @@ const HeroSection = () => {
           <div className="w-64 h-64 mx-auto rounded-full bg-gradient-to-br from-cyan-400 to-purple-600 p-1 animate-scale-in">
             <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
               <Image 
-                src="/image.png"
+                src="/images/image.png"
                 alt="Abhishek Maurya - Portfolio"
                 width={256}
                 height={256}

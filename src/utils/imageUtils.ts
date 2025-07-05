@@ -4,17 +4,16 @@ export const optimizeImage = (src: string, options: {
   quality?: number;
   format?: 'webp' | 'jpg' | 'png';
 }): string => {
-  // In a production environment, you'd use a service like Cloudinary, Imgix, or Next.js Image Optimization
-  // This is a placeholder implementation
-  const { width, height, quality = 80, format = 'webp' } = options;
+  // Ensure the path is correctly formatted
+  let processedSrc = src.startsWith('/') ? `.${src}` : `/${src}`;
   
-  // For local development, we'll just return the original src
+  // For development, just return the processed path
   const isDevelopment = import.meta.env.DEV || process.env.NODE_ENV === 'development';
   if (isDevelopment) {
-    return src;
+    return processedSrc;
   }
   
-  // In production, you'd generate optimized image URLs here
-  // Example: return `https://your-cdn.com/${encodeURIComponent(src)}?w=${width}&h=${height}&q=${quality}&fm=${format}`;
-  return src;
+  // In production, you can add your image optimization logic here
+  // For now, we'll just return the processed path
+  return processedSrc;
 };
